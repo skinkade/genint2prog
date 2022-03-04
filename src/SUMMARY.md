@@ -14,3 +14,5 @@
   - [Practice](ch01-05-practice.md)
 - [Editing](ch02-00-editing-dev.md)
   - [Windows](ch02-01-windows.md)
+  - [MacOS & Linux](ch02-02-macos-linux.md)
+  - [VS Code & Calva](ch02-03-vscode-calva.md)
