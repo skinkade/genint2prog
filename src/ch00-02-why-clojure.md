@@ -14,6 +14,8 @@ for one key reason: it is extremely interactive. As we will get to,
 developing in Clojure allows you to get instant feedback on (almost)
 all your code, allowing you to rapidly check your work. This also makes
 it a great language for just playing around and experimenting in.
+On top of all that, I and many other feels that Clojure is just plain
+*enjoyable* and *fun*.
 
 \* *syntax* refers to the structure of code and how it's written
 

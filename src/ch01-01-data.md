@@ -73,7 +73,7 @@ with a single quote at the beginning:
 
 \* *literal* means the way of writing a constant value
 
-We'll get to why that single quote is necessary when we cover syntax.
+We'll get to why that single quote is necessary when we cover syntax more in depth.
 
 The basic difference between lists and vectors is:
 - lists are fast to add items to, but slow to find a specific item

@@ -12,3 +12,5 @@
   - [Variables](ch01-03-vars.md)
   - [Functions](ch01-04-functions.md)
   - [Practice](ch01-05-practice.md)
+- [Editing](ch02-00-editing-dev.md)
+  - [Windows](ch02-01-windows.md)
