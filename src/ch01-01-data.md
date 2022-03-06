@@ -2,20 +2,16 @@
 
 Data can take the form of either single, individual values, or
 structures which can contain more than one value.
-
-## Scalar values
-
-The technical term for a piece of data that cannot be broken down any further
-is a **scalar**.
-We'll now go over the fundamental scalar types available to us in Clojure.
+Data can also be broken down into categories,
+which are called `types`.
+These types are related to how a piece of data is stored
+in the computer's memory.
+This section explains some of Clojure's core data types.
 
 ### Numbers
 
-There are two important things to note about numbers in computing:
-- there is a distinction between numbers with or without a decimal point
-- the data types that hold numeric values have sizes, which determine how big a number they can represent *(is this relevant to a beginner?)*
-
-We'll address these points in more detail later on.
+In computering, there is a distinction between whole numbers
+and numbers with trailing decimal places.
 For now, know that whole numbers without a decimal point are called **integers**,
 such as `1`, `100`, or `9841098`; and numbers with decimal points are called **floats**,
 such as `3.14` or `81.9841`.
@@ -31,7 +27,7 @@ A sequence of characters to form a word, sentence, or longer, is called a
 Characters and strings are typically surrounded by single and/or double quote characters,
 depending on the language.
 In Clojure, strings are surrounded by double quotes like `"Hello!"`, while
-characters can be preceded by a backslash like `\c`.
+characters have a backslash before them like `\c`.
 
 ### Truthiness
 
@@ -41,72 +37,72 @@ These can often be thought of as the answers to yes-or-no questions.
 Did I walk the dog this morning? Yes (true).
 
 
-## Sequences
+## Collections
 
-There are a number of ways of storing a series of multiple scalar values.
-Two ways available to us in Clojure are **lists** and **vectors**.
+Let's say you want to create a grocery list.
+Each item you need to buy on the list is a string.
+We need a way storing a series of strings in order to represent the grocery list.
+
+There are a number of ways of storing a series of multiple values.
+Two ways available to us in Clojure are **lists** and **vectors**,
+which are both types of *collections*.
 
 Side note: Clojure descends from a language called Lisp,
 whose name comes from shortening "**lis**t **p**rocesser".
 
-We'll start with vectors, which are a series of values surrounded
-by square brackets:
+Lists can we written as a series of values surrounded by parentheses,
+with or without commas, like:
 
-```
-["hi" "hello" "yes" "indeed" "hm" "quite"]
-```
+```("apples" "eggs" "bread")```
 
-Vectors and lists are numerically indexed, starting at 0.
-In the vector above:
-- index 0 is "hi"
-- index 1 is "hello"
-- and so on
+Lists are fast to add items to, but when you go to find an item,
+you can only grab the *first* item,
+followed by another list containers the *rest* of the items,
+which makes them slower to go through.
+We'll go over why this is later on.
 
-**TODO**: explain indexing and add diagram
+Vectors are written as a series of values surrounded by square brackets:
 
-To write a list literal\*, you surround a series of values with parentheses,
-with a single quote at the beginning:
+```["apples" "eggs" "bread"]```
 
-```
-'(1 2 3 4 5)
-```
-
-\* *literal* means the way of writing a constant value
-
-We'll get to why that single quote is necessary when we cover syntax more in depth.
-
-The basic difference between lists and vectors is:
-- lists are fast to add items to, but slow to find a specific item
-- vectors are slower to add items to than lists, but fast to find specific items
-
-This book will largely be using vectors in its examples.
+Each element in a vector has a numeric ID, called an index.
+Indexes start at 0 and increment, so the first element is index 0,
+the second is index 1, and so on.
+If you know the index of an element, you can retrieve it instantly.
+It is slower to add items to compared to a list, however.
 
 
 
-## Key-value pairs
+### Pairs of Keys and Values
 
 A structure known as a **hash map** or simply **map** is the
 bread and butter of passing data around in Clojure.
-Think about IDs like on passports and drivers license.
+It is another type of collection.
+Think about ID numbers like on passports and drivers licenses.
 With one value, a government system can look up data on a person.
 
-Maps have *keys* which are values that serve as identifiers,
-and a matching *value*, which could be any type of data,
+Maps have *keys* which are pieces of data that serve as identifiers,
+and matching *values*, which could be any type of data,
 incuding other maps!
 
-A map is defined as series of keys followed immediatedly
-by their value within curly brackets.
+A map is written as a series pairs of a key followed by its value.
 There is no separator between a key and its value besides a space,
 and while you can optionally separate pairs by commas,
 conventionally we put each pair on its own line.
 
 A simple example:
+
 ```
 {"key1" "value1"
  "key2" "value2"}
 ```
 
-A lookup table\* of month number and their short month names:
+Maps are often used for creating *lookup tables*.
+A lookup table is a convenient way to translate some type of ID
+to its value.
+
+Below is a lookup table of month numbers to their shorthand names.
+
 ```
 { 1 "Jan"
   2 "Feb"
@@ -122,4 +118,19 @@ A lookup table\* of month number and their short month names:
  12 "Dec"}
 ```
 
-\* *lookup tables* are convenient ways of converting one value to another
+
+
+### Sets
+
+A set is another sort of collection, which is a sequence containing
+only unique values.
+
+Let's say you're hosting a party, and are making a guest list.
+If someone repeatedly told you that they're coming,
+you wouldn't add their name to the guest list multiple times.
+In this case, you can use a set of guest names to make sure
+that there's no duplicate entries.
+
+```
+#{"Greg" "Charlie" "Taylor"}
+```

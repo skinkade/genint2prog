@@ -4,7 +4,7 @@ Programmers rarely use basic text editors.
 Instead, we use *integrated development environments* (IDEs),
 full of tools and features that making programming easy and more productive.
 
-Recently, Visual Studio Code has become arguably the most popular free IDE.
+Visual Studio Code has quickly become the most popular free IDE.
 There are numerous plugins for VS Code that extend its functionality,
 including *Calva* - the de facto Clojure plugin for this IDE.
 

@@ -9,7 +9,7 @@ Let's start by adding two numbers together.
 (+ 2 2)
 ```
 
-There's actually quite to show with this one line!
+There's actually quite a lot to show with this one line!
 The code box you see above is interactive, and you're
 free to modify its contents to see what you get.
 

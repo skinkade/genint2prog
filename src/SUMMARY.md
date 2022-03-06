@@ -16,3 +16,6 @@
   - [Windows](ch02-01-windows.md)
   - [MacOS & Linux](ch02-02-macos-linux.md)
   - [VS Code & Calva](ch02-03-vscode-calva.md)
+- [Interactive Development](ch03-00-interactive-dev.md)
+  - [Lists & Vectors](ch03-01-lists-vectors.md)
+  - [Maps](ch03-02-maps.md)

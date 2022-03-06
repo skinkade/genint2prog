@@ -2,6 +2,9 @@
 
 **WORK IN PROGRESS. All pages subject to change.**
 
+Source for this book available
+[here](https://github.com/skinkade/genint2prog).
+
 This resource is intended for learners with little to no programming experience.
 
 Goals of this book:
