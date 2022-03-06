@@ -8,32 +8,41 @@ Clojure has convenience functions such as `first` and `second`
 to retrieve items from a collection:
 
 ```klipse
-(second [1 2 3])
+(first [1 2 3])
 ```
 
 More generally however, specific items can be retrieved using
-the `nth` function (as in: 1st, 2nd, 3rd ... *nth*).
-It has the form:
+the `nth` function.
+
+If you have a series of numbers `0, 1, 2, 3, ... n`, where `n`
+represents any specific number, then `0th, 1st, 2nd, 3rd, ... nth`
+is how you refer to that element.
+
+`nth` has the form:
 
 ```
 (nth collection index)
 ```
 
 Remember that indexes start at 0, not 1, so if we want to grab
-the 3rd element, we need to retrieve index 2:
+the first element, we call `nth` using index 0.
+Below is (almost) equivalent to calling `first`:
 
 ```klipse
-(nth [1 2 3] 2)
+(nth [1 2 3] 0)
 ```
 
-`nth` will throw an error if you try to retrieve an index that doesn't exist:
+Almost equivalent, because `nth` will throw an error if you try to retrieve
+an index that doesn't exist:
 
 ```klipse
 (nth [1 2 3] 10)
 ```
 
 There's also the `get` function, which in this instance functions
-similarly to `nth`, but does not throw an error, instead returning `nil`.
+similarly to `nth`, but does not throw an error on a non-existing index,
+instead returning `nil`.
+`first` will also return `nil` for an empty sequence.
 
 ```klipse
 (get [1 2 3] 10)
@@ -47,11 +56,12 @@ zero of *something*, a *null* is the complete absence of a value.
 
 ## Adding Elements
 
-To add an element to a list or vectors, we **conj**oin the
+To add an element to a list or vector, we **conj**oin the
 element to the collection with the `conj` function.
 An interesting note: when we add an element to a vector,
 it's added to the end.
 When we add an element to a list, it's added to the beginning.
+Why that is will be explained later.
 
 ```klipse
 (conj [1 2 3] 4)
@@ -84,17 +94,14 @@ which has the form:
 Let's see what we get...
 
 ```klipse
-(range 1 10)
-```
-
-Ah, almost! One gotcha here is that the end of the range is *exclusive*,
-that is, it excludes the number itself.
-This means that the end of our range actually has to be one higher
-than the end number we want:
-
-```klipse
 (range 1 11)
 ```
+
+Why did I use `11` as the end?
+One gotcha here is that the end of the range is *exclusive*,
+that is, it excludes the number itself.
+This means that the end of our range actually has to be one higher
+than the end number we want.
 
 What if we want a list of 10 fives?
 Clojure has the `repeat` function for that:
@@ -151,7 +158,7 @@ meaning they can be treated just like pieces of data.
 *This includes being passed as arguments to other functions!*
 
 Many core functions in Clojure take other functions as their arguments.
-Often, these argument functions are used by calling function to somehow
+Often, these argument functions are used by the calling function to somehow
 manipulate a collection of data.
 
 Before we discuss one such function, I'd like to get a potential source of
@@ -231,6 +238,10 @@ First you'll need to know the function `println`, which takes
 one or more pieces of data, and prints a line in a console
 containing the *human-readable* version of that data.
 
+```klipse
+(println "hello!")
+```
+
 We can combine that with the function `doseq`, which **do**es something
 to each item in a **seq**uence:
 
@@ -243,7 +254,7 @@ A lot going on there in just two lines!
 Something brand new is the first argument, `[item [1 2 3 4]]`.
 `doseq` uses this form to *bind* each value in `[1 2 3 4]` to
 the variable `item`.
-Then for each of these items, it evaluates `(println items)`.
+Then for each of these items, it evaluates `(println item)`.
 
 You'll also notice that the editor printed `nil` at the end.
 In Clojure, every evaluation has to return *something*,
@@ -254,7 +265,7 @@ and if it doesn't return something, it will default to returning `nil`.
 ## A Challenge
 
 If you're ready, the following is a challenge that combines everything
-we've learned so far, and introduce several more things.
+we've learned so far, and introduces several more things.
 
 Let's say we want display the following:
 
@@ -267,6 +278,11 @@ Let's say we want display the following:
 ```
 
 What may seem simple is actually a bit tricky.
+I'm going to demonstrate one solution,
+and ask you to complete another.
+
+### First Solution, with lazy sequences
+
 What is it that we need to do here?
 
 Here's what we'll do:
@@ -327,11 +343,70 @@ We just need to print each item as a line with `doseq` and `println`.
   [s]
   (str s "*"))
 
-(def stars
+(def star-sequence
   (iterate add-star "*"))
 
 (def five-stars
-  (take 5 stars))
+  (take 5 star-sequence))
+
+(doseq [star-line five-stars]
+  (println star-line))
+```
+
+
+
+### Second Solution, with map + range
+
+This solution uses slightly a different process than the first:
+- write a function that generates a string containing a number of stars
+- map over a range of numbers, calling the above function on each number
+- print each element
+
+One thing to note before we begin.
+In the previous exercise, I introduce `str` to create a single string out
+of a numbers of arguments.
+However, this only works on the list of arguments, not an argument
+which happens to be a list.
+Meaning, this does not do what we might expect:
+
+```klipse
+(str ["abc" "def"])
+```
+
+Allow me to introduce `apply`, a function which takes an input function
+and a collection, and treats that collection like individual
+arguments to the input function:
+```
+(apply function collection)
+```
+
+```klipse
+(apply str ["abc" "def"])
+```
+
+We can now move on to writing a function which,
+for a given number *x*, returns a string containing *x* number of stars.
+
+To do this, we can use the `repeat` function to get a list of *x* number
+of stars as individual strings, then `apply str` to make them into one string.
+
+```klipse
+(println "Individual stars: " (repeat 5 "*"))
+
+(apply str (repeat 5 "*"))
+```
+
+We then want to generate a list of numbers with `range`,
+and use `map` to pass each of those numbers to the function we define.
+Then, we print each element of the result with `doseq` and `println`.
+
+```klipse
+(defn make-star-string
+  [length]
+  (apply str (repeat length "*")))
+
+(def five-stars
+  (map make-star-string (range 1 6)))
 
 (doseq [star-line five-stars]
   (println star-line))
