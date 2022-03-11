@@ -23,7 +23,7 @@ Why the parentheses, *and why does the plus sign come before the numbers?*
 
 This is a particular feature of the family of languages that Clojure comes from.
 Clojure is composed of *expressions*. When an expression is a list of items
-surrounded by parantheses, the first item is treated as an *operator* to be
+surrounded by parentheses, the first item is treated as an *operator* to be
 applied to whatever follows.
 
 In this case, the plus sign is an addition operator.

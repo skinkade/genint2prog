@@ -1,4 +1,4 @@
-# 2.1 Functions
+# 2.1. Functions
 
 {{#include klipse-pretext.html}}
 
@@ -39,5 +39,16 @@ Let's take a step back and break down exactly what we just did:
 - we are defining a function named `add-ten`
 - this function takes one input, which we call `x`
 - we add 10 to whatever the value of `x` is
+
+In the following code block, try writing completing this function
+that multiplies a value by five:
+
+```klipse
+(defn times-five
+  []
+  ())
+
+(times-five 4)
+```
 
 {{#include klipse-posttext.html}}

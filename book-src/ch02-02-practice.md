@@ -1,4 +1,4 @@
-# Data & Code Practice
+# 2.2. Function Practice
 
 {{#include klipse-pretext.html}}
 
@@ -54,6 +54,8 @@ so the editor prints `true`.
 
 <hr />
 
+Hint: there's nothing stopping you from using a value multiple times.
+
 ```klipse
 (defn square
   [x]
@@ -63,18 +65,15 @@ so the editor prints `true`.
    (square 3))
 ```
 
-<hr />
-
-Challenge problem time!
-Hint: you can reference a variable within a function, even if that variable
-isn't part of the function's input.
+New concept: here we **def**ine a value outside our function definition.
+We can still use that within our function, though.
 
 ```klipse
 (def pi 3.14)
 
 (defn circle-circumference
    [radius]
-   (* _ _ _))
+   (* 2 _ _))
 
 (= 12.56
    (circle-circumference 2))
