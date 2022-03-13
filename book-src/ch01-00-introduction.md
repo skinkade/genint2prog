@@ -1,9 +1,11 @@
 # 1. Introduction
 
 Hello, hello! Let's say you want to learn programming.
-Whether that be because you want to bring an idea to life,
+Whether that's because you want to bring an idea to life,
 or find computing fascinating, or just think it'll be fun,
-let's go about this in a practical yet enjoyable manner, eh?
+everyone has their own reason for learning how to code.
+I'd like show you how to learn programming in a way that's both
+practical and enjoyable.
 
 First off, what actually is programming?
 Put simply, it's a way of telling a computer what you want it to do.

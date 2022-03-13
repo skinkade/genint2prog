@@ -9,7 +9,7 @@ We'll start with the absolute basics: adding two numbers together.
 (+ 2 2)
 ```
 
-Already a lot going on, eh?
+Already a lot going on, but don't worry.
 
 Firstly, we're already living up to the title of this book.
 In the block above, you'll see two panes:
@@ -22,7 +22,11 @@ Second, that look awfully weird, doesn't it?
 Why the parentheses, *and why does the plus sign come before the numbers?*
 
 This is a particular feature of the family of languages that Clojure comes from.
-Clojure is composed of *expressions*. When an expression is a list of items
+Clojure is composed of *expressions*.
+*Expressions* can either be an individual value like the number `42`
+or the word `"apples"`, or it could be a list of items, in which
+case those items are surrounded by parentheses.
+When an expression is a list of items
 surrounded by parentheses, the first item is treated as an *operator* to be
 applied to whatever follows.
 
