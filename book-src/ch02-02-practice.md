@@ -34,10 +34,13 @@ so the editor prints `true`.
 
 <hr />
 
+<!-- 
+   Simplified this example because I feel people are likely to skip it. Mental math isn't fun.
+-->
 ```klipse
 (= _
-   (+ (* 3 4)
-      (/ 40 5)))
+   (* 10
+      (+ 3 4)))
 ```
 
 <hr />
@@ -65,6 +68,11 @@ Hint: there's nothing stopping you from using a value multiple times.
    (square 3))
 ```
 
+<!-- 
+   I like this idea of making it clear where new concepts are being introduced 
+   vs where concepts that have already been explored are being pieced together.
+   I think it would be nice if this was consistently used throughout the book.
+-->
 New concept: here we **def**ine a value outside our function definition.
 We can still use that within our function, though.
 
