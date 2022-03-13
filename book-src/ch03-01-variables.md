@@ -16,8 +16,9 @@ We **def**ine a variable with the `def` operator:
 four
 ```
 
-In addition to using variables in functions,
-we can also use them in the definitions of other variables.
+<!-- For some reason I found this wording a little confusing -->
+In addition to using variables in our function definitions,
+we can also use them when we're creating other variables.
 Take the last grocery list structure we made, for example.
 We could define each of our categories of items as their
 own variables, then include them within
@@ -49,6 +50,26 @@ here's another example:
 circumference
 ```
 
+<!-- 
+  Maybe close this off with some interactive section that ends in something like...? 
+
+  (def produce-items [... _])
+  (def dairy-items [... _])
+  (def bakery-items [... _])
+  
+  (def grocery-list 
+    {"produce" _
+     "dairy" _
+     "bakery" _ })
+  
+  (= grocery-list 
+     {"produce" [a b c]
+      "dairy" [x y z]
+      "bakery" [1 2 3]})
+  
+  I feel like this could use some example that they need to fill things in over 
+  multiple expressions.
+-->
 Again, feel free to modify the code above and play around!
 
 {{#include klipse-posttext.html}}

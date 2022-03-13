@@ -10,6 +10,7 @@ is just the name of that item, to keep it simple.
 In most programming languages, pieces of text are written
 surrounded by double quotes:
 
+<!-- I like this approach of first saying the ways we *don't* represent something -->
 ```clojure
 "apples"
 ```
@@ -35,10 +36,11 @@ I suppose we could also write them as a single piece of text...
 and especially when we need to sort them or perform some
 other operations.
 
+<!-- Optionality of commas is an implementation detail that isn't important to know yet -->
 They need to be individual pieces within some larger whole -
 a slightly more complex piece of data.
 In Clojure, one way of doing this is to write the individual pieces
-within square brackets, optionally with commas in between, like so:
+within square brackets, like so:
 
 ```clojure
 ["apples", "bananas", "milk", "eggs", "bread"]
@@ -71,6 +73,10 @@ we **conj**oin an item to it with the `conj` function:
 ```klipse
 (conj ["apples", "bananas", "milk", "eggs", "bread"] "juice")
 ```
+
+<!-- 
+    I'd have an interactive section before getting them to start with maps.
+-->
 
 Let's go one step further.
 In most American grocery stores, apples and bananas with be in the produce section,

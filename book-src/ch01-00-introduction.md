@@ -1,15 +1,21 @@
 # 1. Introduction
 
-Hello, hello! Let's say you want to learn programming.
+<!-- 
+    Changed this because them wanting to learn programming 
+    isn't really a hypothetical at this point - they've picked up the book, 
+    so the interest is already there.
+-->
+Hello, hello! So, you want to learn programming.
 Whether that's because you want to bring an idea to life,
 or find computing fascinating, or just think it'll be fun,
 everyone has their own reason for learning how to code.
 I'd like show you how to learn programming in a way that's both
 practical and enjoyable.
 
+<!-- The full stop felt a little off to me, idk -->
 First off, what actually is programming?
-Put simply, it's a way of telling a computer what you want it to do.
-Generally in a very explicit, clear-cut way.
+Put simply, it's a way of telling a computer what you want it to do - 
+generally in a very explicit, clear-cut way.
 
 Computers are really good at taking some input, running some
 manipulations or calculations on it, and giving back some output.
