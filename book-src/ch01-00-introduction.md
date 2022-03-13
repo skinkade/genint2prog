@@ -1,10 +1,5 @@
 # 1. Introduction
 
-<!-- 
-    Changed this because them wanting to learn programming 
-    isn't really a hypothetical at this point - they've picked up the book, 
-    so the interest is already there.
--->
 Hello, hello! So, you want to learn programming.
 Whether that's because you want to bring an idea to life,
 or find computing fascinating, or just think it'll be fun,
@@ -12,7 +7,6 @@ everyone has their own reason for learning how to code.
 I'd like show you how to learn programming in a way that's both
 practical and enjoyable.
 
-<!-- The full stop felt a little off to me, idk -->
 First off, what actually is programming?
 Put simply, it's a way of telling a computer what you want it to do - 
 generally in a very explicit, clear-cut way.
@@ -35,19 +29,28 @@ What calculations would we perform on those?:
 
 We're getting ahead of ourselves, though.
 When you really get down to it, some of the above gets pretty technical.
-Let's start with something simple: letters.
 
-Why letters? Well...
-- Letters form words
-- Words form sentences
-- Sentences form paragraphs
-- Paragraphs form chapters
-- Chapters form books
-- Books form libraries
+Let's start with some very basic math.
+Note: you do **not** need to know advanced math to be a programmer!
 
-Starting from something very small, you can build pieces together to form something huge.
-In much the same way, all complex pieces of data and all complex operations are
-fundamentally built from much smaller pieces gradually combined together.
+Imagine a simple math problem like `2 + 2` or `3 * 4`.
+Very simple on its own, but if you think about it, you can keep combining
+more and more simple problems to form a more difficult one. Say...
 
-In this book, we'll be using the Clojure programming language, which is extremely good
-at composing lots of little components into relatively-easy-to-understand big systems.
+`2 + 8 * 3 / 6 * (10 - 7)`
+
+Suddenly you've got a more complex problem,
+but so long as you follow some rules (PEMDAS / BODMAS),
+you can break it back down into smaller parts to make it easier to solve:
+
+```
+2 + 8 * 3 / 6 * (10 - 7)
+2 + 8 * 3 / 6 * 3
+2 + 24 / 6 * 3
+2 + 4 * 3
+2 + 12
+14
+```
+
+Computing works in the same way: every complex procedure is just a series of
+smaller procedures, that can even be broken down and re-combined in different ways.

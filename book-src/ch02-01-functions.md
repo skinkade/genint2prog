@@ -2,15 +2,12 @@
 
 {{#include klipse-pretext.html}}
 
-We've seen operators for addition, subtraction, multiplication, and division.
-We're far from limited to those, though.
-Clojure has hundreds of operators built-in.
-Let's talk about how a lot of those operators are defined.
+We've seen functions for addition, subtraction, multiplication, and division.
+We're far from limited to those, though!
+Not only does Clojure have hundreds of functions built-in,
+we can define our own functions to use!
 
-For the moment, we're going to say that a **function** is an operation
-which takes some input data and returns some output data.
-
-To **de**fine a **f**u**n**ction, we use the `defn` operator.
+To **de**fine a **f**u**n**ction, we use `defn`.
 The form for this looks like:
 
 ```clojure
@@ -19,7 +16,7 @@ The form for this looks like:
     (do-something-with input))
 ```
 
-Remember that this is a list, where the first item is the operator `defn`.
+Remember that this is a list, where the first item is `defn`.
 In this case:
 - the second item is the name we want to give to the function we're defining
 - the third item specifies what inputs (in square brackets) we want this function to work with

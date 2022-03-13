@@ -2,6 +2,23 @@
 
 {{#include klipse-pretext.html}}
 
+We've discussed building series of operations together to form complex ones.
+We can do the same thing for data.
+
+Think about this particular piece of data: a single word.
+
+What can be built starting with a single word? Well,
+
+- Words form sentences
+- Sentences form paragraphs
+- Paragraphs form chapters
+- Chapters form books
+- Books form libraries
+
+Starting from something very small, you can build pieces together to form something huge.
+In much the same way, all complex pieces of data are
+fundamentally built from much smaller pieces gradually combined together.
+
 Let's say we want to start writing a grocery list.
 How do we do that?: one item at a time.
 
@@ -10,7 +27,6 @@ is just the name of that item, to keep it simple.
 In most programming languages, pieces of text are written
 surrounded by double quotes:
 
-<!-- I like this approach of first saying the ways we *don't* represent something -->
 ```clojure
 "apples"
 ```
@@ -36,7 +52,6 @@ I suppose we could also write them as a single piece of text...
 and especially when we need to sort them or perform some
 other operations.
 
-<!-- Optionality of commas is an implementation detail that isn't important to know yet -->
 They need to be individual pieces within some larger whole -
 a slightly more complex piece of data.
 In Clojure, one way of doing this is to write the individual pieces
@@ -74,9 +89,23 @@ we **conj**oin an item to it with the `conj` function:
 (conj ["apples", "bananas", "milk", "eggs", "bread"] "juice")
 ```
 
-<!-- 
-    I'd have an interactive section before getting them to start with maps.
--->
+Try writing your own grocery lists:
+
+```klipse
+(first [])
+```
+
+<hr />
+
+```klipse
+(last [])
+```
+
+<hr />
+
+```klipse
+(conj [] "bananas")
+```
 
 Let's go one step further.
 In most American grocery stores, apples and bananas with be in the produce section,

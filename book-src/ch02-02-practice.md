@@ -2,7 +2,7 @@
 
 {{#include klipse-pretext.html}}
 
-We can check if two values are equal using the `=` operator.
+We can check if two values are equal using `=`.
 These practice problems gradually get more difficult.
 
 ```klipse
@@ -34,9 +34,6 @@ so the editor prints `true`.
 
 <hr />
 
-<!-- 
-   Simplified this example because I feel people are likely to skip it. Mental math isn't fun.
--->
 ```klipse
 (= _
    (* 10
@@ -68,12 +65,7 @@ Hint: there's nothing stopping you from using a value multiple times.
    (square 3))
 ```
 
-<!-- 
-   I like this idea of making it clear where new concepts are being introduced 
-   vs where concepts that have already been explored are being pieced together.
-   I think it would be nice if this was consistently used throughout the book.
--->
-New concept: here we **def**ine a value outside our function definition.
+Here's a new concept: we can **def**ine a value outside our function definition.
 We can still use that within our function, though.
 
 ```klipse
