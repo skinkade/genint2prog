@@ -8,3 +8,4 @@
   - [Practice](ch02-02-practice.md)
 - [All About Data](ch03-00-all-about-data.md)
   - [Variables](ch03-01-variables.md)
+- [Conditions](ch04-00-conditions.md)

@@ -30,14 +30,16 @@ What calculations would we perform on those?:
 We're getting ahead of ourselves, though.
 When you really get down to it, some of the above gets pretty technical.
 
-Let's start with some very basic math.
+Let's start with some arithmetic.
 Note: you do **not** need to know advanced math to be a programmer!
 
-Imagine a simple math problem like `2 + 2` or `3 * 4`.
+Imagine a math problem like `2 + 2` or `3 * 4`.
 Very simple on its own, but if you think about it, you can keep combining
 more and more simple problems to form a more difficult one. Say...
 
-`2 + 8 * 3 / 6 * (10 - 7)`
+```
+2 + 8 * 3 / 6 * (10 - 7)
+```
 
 Suddenly you've got a more complex problem,
 but so long as you follow some rules (PEMDAS / BODMAS),
@@ -54,3 +56,7 @@ you can break it back down into smaller parts to make it easier to solve:
 
 Computing works in the same way: every complex procedure is just a series of
 smaller procedures, that can even be broken down and re-combined in different ways.
+
+This book uses the Clojure programming, which is known to be
+particularly good for breaking complex problems into smaller,
+easier ones.
